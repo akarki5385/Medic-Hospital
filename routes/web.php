@@ -13,15 +13,25 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
+Route::get('/admin', function () {
     return view('admin');
 });
 Route::get('/welcome', function () {
     return view('welcome');
+
 });
 
 Route::get('/temp', function () {
     return view('template');
+});
+// try for fornt templaate by friend
+Route::get('/', function () {
+    return view('front');
+});
+
+
+Route::get('/service', function () {
+    return view('service');
 });
 
 Route::get('/1', function () {
@@ -30,7 +40,6 @@ Route::get('/1', function () {
 Route::get('/profile_update', function () {
     return view('test');
 });
-
 
 
 Auth::routes();
@@ -65,3 +74,19 @@ Route::post('/admin/appointment/store', 'AppointmentController@store')->name('ap
 
 Route::get('appointment/create/user/{ id }', 'Patient\DashboardController@appointmentcreate')->name('userappointment.create');
 Route::post('appointment/store/user/{id}', 'AppointmentController@store')->name('userappointment.store');
+
+
+Route::match(['get', 'post'], '/botman', 'BotManController@handle');
+
+// route for sending email
+Route::get('/send-mail', function(){
+    $details=[
+
+    'title'=> 'Confirmation email for  Medic+',
+    'body'=> 'be ther on time, your appointment is booked for sure.'
+
+    ];
+    \Mail::to('karkianish848@gmail.com')->send(new \App\Mail\TestMail($details));
+    echo "Confirmation email sent";
+
+    });
