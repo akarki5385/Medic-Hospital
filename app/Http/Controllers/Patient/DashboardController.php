@@ -27,9 +27,9 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function appointmentcreate(Request $user)
+    public function appointmentcreate(Request $request)
 
-    {   dd($user);
+    {
         $user = Auth::user();
 
 
@@ -43,19 +43,17 @@ class DashboardController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function appointment(Request $request)
+    public function appointmentstore(Request $request)
 
 
     {
-
-
-
+        // $user = Auth::user()->name;
+        // $email = Auth::user()->email;
 
 
 
         $request->validate([
-            'name'=>'required',
-            'email'=>'required',
+
             'phone_number'=>'required',
             'department'=>'required',
 
@@ -64,19 +62,27 @@ class DashboardController extends Controller
             'message'=>'required',
 
             ]);
+
         $appointment = new Appointment([
-            'name' => $request->get('name'),
-            'email' => $request->get('email'),
-            'department' => $request->get('service'),
+            'name' => (Auth::user()->name),
+            'email' =>(Auth::user()->email),
+            'department' => $request->get('department'),
             'phone_number' => $request->get('phone_number'),
             'date' => $request->get('date'),
             'time' => $request->get('time'),
             'message' => $request->get('message'),
         ]);
-
         $appointment->save();
-        return redirect('/')->with('success', 'Appointment saved!');
-        return view('appointments.index', compact('appointment'));
+
+        $details=[
+
+            'title'=> 'Confirmation email for  Medic+',
+            'body'=> 'be there on time, your appointment is booked for sure.Trust us we will cure you'
+
+            ];
+            \Mail::to(Auth::user()->email)->send(new \App\Mail\TestMail($details));
+
+        return redirect('/patient_dashboard')->with('success', 'Appointment saved!');
 
 
     }

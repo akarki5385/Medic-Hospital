@@ -24,11 +24,35 @@
     <section class="breadcrumbs">
       <div class="container">
 
+
+
+        <div class="col-sm-12">
+            @if(session()->get('success'))
+              <div class="alert alert-success">
+                {{ session()->get('success') }}
+              </div>
+            @endif
+          </div>
+
+          @if ($errors->any())
+          <div class="alert alert-danger">
+              <strong>Whoops!</strong> There were some problems with your input.<br><br>
+              <ul>
+                  @foreach ($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                  @endforeach
+
         <div class="d-flex justify-content-between align-items-center">
           <h2>Inner Page</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
             <li>Inner Page</li>
+
+
+
+        </ul>
+    </div>
+@endif
           </ol>
         </div>
 
@@ -48,9 +72,9 @@
                       <a class="nav-link active show" data-toggle="tab" href="#tab-1">Profile</a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ route('userappointment.create',$user->id)}}" class="btn btn-primary">Book Appointment</a>
+                    <a href="{{ route('userappointment.create')}}" class="btn btn-primary">Book Appointment</a>
 
-                      {{-- <a class="nav-link" data-toggle="tab" href="#tab-2">Appointments</a> --}}
+                      <a class="nav-link" data-toggle="tab" href="#tab-2">Appointments</a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" data-toggle="tab" href="#tab-3">Medications</a>
@@ -71,7 +95,7 @@
 			 </ul>
           </div>
 
-		 <div class="col-lg-9 mt-4 mt-lg-0">
+	<div class="col-lg-9 mt-4 mt-lg-0">
               <div class="tab-content">
                   <div class="tab-pane active show" id="tab-1">
                       <div class="row">
@@ -90,13 +114,81 @@
                   <div class="tab-pane" id="tab-2">
                       <div class="row">
                           <div class="col-lg-8 details order-2 order-lg-1">
-                              <h3>Appointments.</h3>
-                              <p class="font-italic">Review or book an appointment</p>
-                              <p>
-                                  Graphical calendar goes here.
+                              <h3>Make Appointments {{ Auth::user()->name }}.</h3>
+                              <p class="font-italic">Book an appointment</p>
 
-								  Calendar drop down goes here.
-                              </p>
+                              <p>
+
+                                <form action="{{ route('userappointment.store') }}" method="POST">
+                                    @csrf
+                                    <div class="form-row">
+                                        <div class="col-md-4 form-group">
+                                          <input type="text" name="name" class="form-control" id="name" placeholder="{{ Auth::user()->name }} " data-rule="minlen:20" data-msg="Please enter at least 4 chars"readonly>
+                                          <div class="validate"></div>
+                                        </div>
+
+
+                                        <div class="col-md-4 form-group">
+                                          <input type="email" class="form-control" name="email" id="email" placeholder="{{ Auth::user()->email}} " data-rule="email:4" data-msg="Please enter your email with @ sign"readonly>
+                                          <div class="validate"></div>
+                                        </div>
+                                      </div>
+
+
+
+
+                                      <div class="form-row">
+                                          <div class="col-md-4 form-group">
+                                            <input type="string" name="phone_number" class="form-control" id="phone_number" placeholder="Phone Number" data-msg="Please enter at least 10 chars">
+                                            <div class="validate"></div>
+                                          </div>
+
+                                          <div class="col-md-4 form-group">
+                                            <input type="time" class="form-control" name="time" id="time" placeholder="Time" data-rule="time" data-msg="Please enter a valid time">
+                                            <div class="validate"></div>
+                                          </div>
+
+                                          <div class="form-row">
+                                            <div class="col-md-10 form-group">
+                                              <input type="datetime" name="date" class="form-control datepicker" id="date" placeholder="Date" data-rule="minlen:8" data-msg="Please enter at least 4 chars">
+                                              <div class="validate">
+
+                                              </div>
+                                            </div>
+                                          {{-- <div class="col-md-4 form-group">
+                                            <input type="tel" class="form-control" name="phone" id="phone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                                            <div class="validate"></div>
+                                          </div> --}}
+                                        </div>
+
+
+
+
+                                        {{-- <div class="col-md-4 form-group">
+                                          <select name="department" id="department" class="form-control">
+                                            <option value="">Select Department</option>
+                                            <option value="Department 1">Department 1</option>
+                                            <option value="Department 2">Department 2</option>
+                                            <option value="Department 3">Department 3</option>
+                                          </select>
+                                          <div class="validate"></div>
+                                        </div> --}}
+                                        <div class="col-md-4 form-group" name="department">
+                                            <input type="string" name="department" class="form-control" id="department" placeholder="Department" data-rule="minlen:10" data-msg="Please enter at least 10 chars">
+                                        </div>
+                                      </div>
+
+                                      <div class="form-group">
+                                        <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
+                                        <div class="validate"></div>
+                                      </div>
+
+
+
+
+                                    <div class="text-center"><button class="btn btn-success" type="submit">Make an Appointment</button></div>
+                                  </form>
+                            </p>
                           </div>
                           <div class="col-lg-4 text-center order-1 order-lg-2">
                               <img src="assets/img/Appointment.jpg" alt="" class="img-fluid">

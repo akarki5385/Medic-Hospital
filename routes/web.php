@@ -1,7 +1,9 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -72,8 +74,8 @@ Route::post('/admin/appointment/store', 'AppointmentController@store')->name('ap
 
 
 
-Route::get('appointment/create/user/{ id }', 'Patient\DashboardController@appointmentcreate')->name('userappointment.create');
-Route::post('appointment/store/user/{id}', 'AppointmentController@store')->name('userappointment.store');
+Route::get('appointment/create/user/appointments', 'Patient\DashboardController@appointmentcreate')->name('userappointment.create');
+Route::post('appointment/store/user/', 'Patient\DashboardController@appointmentstore')->name('userappointment.store');
 
 
 Route::match(['get', 'post'], '/botman', 'BotManController@handle');
@@ -86,7 +88,7 @@ Route::get('/send-mail', function(){
     'body'=> 'be ther on time, your appointment is booked for sure.'
 
     ];
-    \Mail::to('karkianish848@gmail.com')->send(new \App\Mail\TestMail($details));
+    \Mail::to('prasundahal@gmail.com')->send(new \App\Mail\TestMail($details));
     echo "Confirmation email sent";
 
     });

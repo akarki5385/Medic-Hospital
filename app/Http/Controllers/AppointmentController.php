@@ -66,6 +66,10 @@ class AppointmentController extends Controller
         ]);
 
         $appointment->save();
+
+
+
+
         return redirect('/')->with('success', 'Appointment saved!');
 
         //

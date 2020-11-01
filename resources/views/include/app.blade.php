@@ -1,16 +1,10 @@
-
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-
-
-
-
-
-
-
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Medic+ GH - Index</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
     <meta content="" name="descriptison">
     <meta content="" name="keywords">
 
@@ -46,10 +40,7 @@
 
 
 
-{{--
-  <main class="py-4">
-    @yield('content')
-</main> --}}
+
 
 {{--
 // all js files --}}
@@ -81,3 +72,6 @@
 
   <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
 
+
+</body>
+</html>

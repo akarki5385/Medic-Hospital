@@ -1,7 +1,5 @@
 <!-- ======= Appointment Section ======= -->
 
-
-
 <section id="appointment" class="appointment section-bg">
     <div class="container">
 
