@@ -18,11 +18,26 @@
                   <li><a href="#">Contact</a></li>
                 </ul>
           <li><a href="#contact">Contact</a></li>
+          <li>
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/patient_dashboard') }}">Dashboard</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+          </li>
 
         </ul>
       </nav><!-- .nav-menu -->
 
-      <a href="/patient_dashboard" class="appointment-btn scrollto">Patient Login</a>
+      {{-- <a href="/patient_dashboard" class="appointment-btn scrollto">Patient Login</a> --}}
 
 
     </div>

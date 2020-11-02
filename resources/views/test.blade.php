@@ -13,7 +13,7 @@
     <script>
 	    var botmanWidget = {
 	        aboutText: 'ssdsd',
-	        introMessage: "✋ Hi! I'm form codechief.org"
+	        introMessage: "✋ Hi! I am your Virtual Assistance. "
 	    };
     </script>
 

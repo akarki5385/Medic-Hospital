@@ -60,6 +60,7 @@ Route::get('/admin_dashboard', 'Admin\DashboardController@index');
 
 Route::get('/doctor_dashboard', 'Doctor\DashboardController@index');
 Route::get('/patient_dashboard', 'Patient\DashboardController@index');
+
 // Route::get('/appointment/create', 'AppointmentController@create');
 // Route::resource('appointments', 'AppointmentController');
 Route::get('appointment/create', 'AppointmentController@create')->name('appointment.create');
@@ -85,10 +86,10 @@ Route::get('/send-mail', function(){
     $details=[
 
     'title'=> 'Confirmation email for  Medic+',
-    'body'=> 'be ther on time, your appointment is booked for sure.'
+    'body'=> 'Be there on time, your appointment is booked for sure on '
 
     ];
-    \Mail::to('prasundahal@gmail.com')->send(new \App\Mail\TestMail($details));
-    echo "Confirmation email sent";
+    \Mail::to('medicplusgh@gmail.com')->send(new \App\Mail\TestMail($details));
+    echo "Confirmation email sent.";
 
     });

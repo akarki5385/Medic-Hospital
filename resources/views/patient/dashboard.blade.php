@@ -72,9 +72,9 @@
                       <a class="nav-link active show" data-toggle="tab" href="#tab-1">Profile</a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ route('userappointment.create')}}" class="btn btn-primary">Book Appointment</a>
 
-                      <a class="nav-link" data-toggle="tab" href="#tab-2">Appointments</a>
+
+                      <a class="nav-link" data-toggle="tab" href="#tab-2">Book Appointment</a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" data-toggle="tab" href="#tab-3">Medications</a>

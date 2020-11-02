@@ -75,10 +75,11 @@ class DashboardController extends Controller
         $appointment->save();
 
         $details=[
-
+            'name' => (Auth::user()->name),
             'title'=> 'Confirmation email for  Medic+',
-            'body'=> 'be there on time, your appointment is booked for sure.Trust us we will cure you'
-
+            'body'=> 'be there on time, your appointment is booked for sure.Trust us we will cure you on',
+            'date' => $request->get('date'),
+            'time' => $request->get('time')
             ];
             \Mail::to(Auth::user()->email)->send(new \App\Mail\TestMail($details));
 

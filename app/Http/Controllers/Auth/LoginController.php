@@ -34,11 +34,11 @@ class LoginController extends Controller
             return '/admin_dashboard';
             break;
           case 'seller':
-            return '/seller_dashboard';
+            return '/patient_dashboard';
             break;
 
           default:
-            return '/home';
+            return '/';
           break;
         }
       }

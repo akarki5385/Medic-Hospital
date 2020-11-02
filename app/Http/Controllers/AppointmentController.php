@@ -58,7 +58,7 @@ class AppointmentController extends Controller
             'first_name' => $request->get('first_name'),
             'last_name' => $request->get('last_name'),
             'email' => $request->get('email'),
-            'department' => $request->get('service'),
+            'department' => $request->get('department'),
             'phone_number' => $request->get('phone_number'),
             'date' => $request->get('date'),
             'time' => $request->get('time'),

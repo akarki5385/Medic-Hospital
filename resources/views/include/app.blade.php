@@ -66,7 +66,7 @@
   <script>
       var botmanWidget = {
           aboutText: 'ssdsd',
-          introMessage: "✋ Hi! I'm form codechief.org"
+          introMessage: "✋ Hi! I'm form Medic+Hospital"
       };
   </script>
 

@@ -7,10 +7,17 @@
     <title>Medic+ Hospital</title>
 </head>
 <body>
-
-
     <h1>{{ $details['title'] }}</h1>
-    <p> {{ $details['body']}}</p>
+<p>  All set, {{ $details['name']}}
+
+    Your appointment is booked on {{ $details['date']}} at {{ $details['time']}} .See you then.
+    Make sure to use the mask.
+</p>
+
+
+
+
+
     <p>  Thank you. </p>
 
 </body>
