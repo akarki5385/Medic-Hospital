@@ -5,7 +5,7 @@
       <div class="container">
         <div class="row">
 
-          <div class="col-lg-3 col-md-6 footer-contact">
+          <div class="col-lg-4 col-md-8 footer-contact">
             <h3>Medic+ GH</h3>
             <p>
               Hospital Road, <br>
@@ -38,13 +38,13 @@
             </ul>
           </div>
 
-          <div class="col-lg-4 col-md-6 footer-newsletter">
+          {{-- <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Join Our Newsletter</h4>
             <p>Sign up to receive COVID-19 health alerts</p>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
-          </div>
+          </div> --}}
 
         </div>
       </div>
@@ -66,10 +66,10 @@
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://www.facebook.com/Medic-General-Hospital-104927608092292" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/medicplusgh/" class="instagram"><i class="bx bxl-instagram"></i></a>
+        {{-- <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a> --}}
+        <a href="https://www.linkedin.com/in/medicplus-general-hospital-7600b41bb" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
     </div>
   </footer><!-- End Footer -->

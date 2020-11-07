@@ -9,7 +9,7 @@
   @include('include.nav')
 
   <!-- ======= Hero Section ======= -->
-  <section id="about" class="d-flex align-items-center">
+  <section id="hero" class="d-flex align-items-center">
     <div class="container">
       <h1>Welcome to Medic+ GH</h1>
       <h2>Talented healthcare professionals making an impact! </h2>
@@ -229,7 +229,7 @@
       </div>
     </section><!-- End Services Section -->
 
-    @include('include.appointment')
+    {{-- @include('include.appointment') --}}
 
     <!-- ======= Departments Section ======= -->
     <section id="departments" class="departments">

@@ -79,6 +79,10 @@
                   <li class="nav-item">
                       <a class="nav-link" data-toggle="tab" href="#tab-3">Medications</a>
                   </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#tab-4">Good to know...</a>
+                </li>
                   <li class="nav-item">
 
                     <a class="dropdown-item" href="{{ route('logout') }}"
@@ -111,6 +115,23 @@
                           </div>
                       </div>
                   </div>
+
+                  <div class="tab-pane" id="tab-4">
+                    <div class="row">
+                        <div class="col-lg-8 details order-2 order-lg-1">
+                            <h3>good to know</h3>
+                            <p class="font-italic">Message your health care provider should your information change.</p>
+                            <p>
+                                looking for content to upload regarding health concern
+                            </p>
+                        </div>
+                        <div class="col-lg-4 text-center order-1 order-lg-2">
+                            <img src="assets/img/Heart.jpg" alt="" class="img-fluid">
+                        </div>
+                    </div>
+
+
+                </div>
                   <div class="tab-pane" id="tab-2">
                       <div class="row">
                           <div class="col-lg-8 details order-2 order-lg-1">
@@ -139,7 +160,7 @@
 
                                       <div class="form-row">
                                           <div class="col-md-4 form-group">
-                                            <input type="string" name="phone_number" class="form-control" id="phone_number" placeholder="Phone Number" data-msg="Please enter at least 10 chars">
+                                            <input type="text" name="phone_number" class="form-control" id="phone_number" placeholder="Phone Number" >
                                             <div class="validate"></div>
                                           </div>
 
@@ -204,7 +225,9 @@
                                   Medication information goes here.
                               </p>
                           </div>
-				 </div>
+                 </div>
+
+
           </div>
         </div>
 
