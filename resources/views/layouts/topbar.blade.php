@@ -7,7 +7,7 @@
         <i class="icofont-google-map"></i> Hospital Road, Castries, St. Lucia
       </div>
       <div class="social-links">
-        <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+        <a href="https://twitter.com/MedicGh" class="twitter"><i class="icofont-twitter"></i></a>
         <a href="https://www.facebook.com/Medic-General-Hospital-104927608092292" class="facebook"><i class="icofont-facebook"></i></a>
         <a href="https://www.instagram.com/medicplusgh/" class="instagram"><i class="icofont-instagram"></i></a>
         {{-- <a href="#" class="skype"><i class="icofont-skype"></i></a> --}}

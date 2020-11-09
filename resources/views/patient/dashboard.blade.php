@@ -1,22 +1,7 @@
-{{-- @extends('layouts.app')
+@extends('layouts.main')
+@extends('layouts.innernav')
+
 @section('content')
-
-<a href="{{ route('userappointment.create',$user->id)}}" class="btn btn-primary">Book Appointment</a>
-
-@endsection --}}
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-@include('include.app')
-
-
-<body>
-
-    @include('include.topbar')
-    @include('include.nav')
 
   <main id="main">
 
@@ -165,9 +150,24 @@
                                           </div>
 
                                           <div class="col-md-4 form-group">
-                                            <input type="time" class="form-control" name="time" id="time" placeholder="Time" data-rule="time" data-msg="Please enter a valid time">
+                                            <input type="time" class="form-control timepicker" name="time" id="input_starttime" placeholder="Time" data-rule="time" data-msg="Please enter a valid time">
                                             <div class="validate"></div>
                                           </div>
+
+                                          <div class="input-group clockpicker">
+                                            <input type="text" class="form-control" value="09:30">
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-time"></span>
+                                            </span>
+                                        </div>
+                                        <script type="text/javascript">
+                                        $('.clockpicker').clockpicker();
+                                        </script>
+
+
+
+
+
 
                                           <div class="form-row">
                                             <div class="col-md-10 form-group">
@@ -185,18 +185,22 @@
 
 
 
-                                        {{-- <div class="col-md-4 form-group">
+                                        <div class="col-md-4 form-group">
                                           <select name="department" id="department" class="form-control">
                                             <option value="">Select Department</option>
                                             <option value="Department 1">Department 1</option>
                                             <option value="Department 2">Department 2</option>
                                             <option value="Department 3">Department 3</option>
+                                            <option value="Department 3">Department 3</option>
+                                            <option value="Department 3">Department 3</option>
+                                            <option value="Department 3">Department 3</option>
+                                            <option value="Department 3">Department 3</option>
                                           </select>
                                           <div class="validate"></div>
-                                        </div> --}}
-                                        <div class="col-md-4 form-group" name="department">
-                                            <input type="string" name="department" class="form-control" id="department" placeholder="Department" data-rule="minlen:10" data-msg="Please enter at least 10 chars">
                                         </div>
+                                        {{-- <div class="col-md-4 form-group" name="department">
+                                            <input type="string" name="department" class="form-control" id="department" placeholder="Department" data-rule="minlen:10" data-msg="Please enter at least 10 chars">
+                                        </div> --}}
                                       </div>
 
                                       <div class="form-group">
@@ -236,11 +240,4 @@
 
 
   </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  @include('include.footer')
-
-
-</body>
-
-</html>
+@endsection

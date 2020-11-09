@@ -12,7 +12,7 @@
               Castries,<br>
               St. Lucia <br><br>
               <strong>Phone:</strong> +1 758 459 2000<br>
-              <strong>Email:</strong> medicgh@govt.lc<br>
+              <strong>Email:</strong> medicplusgh@gmail.com <br>
             </p>
           </div>
 
@@ -65,7 +65,7 @@
         </div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="https://twitter.com/MedicGh" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="https://www.facebook.com/Medic-General-Hospital-104927608092292" class="facebook"><i class="bx bxl-facebook"></i></a>
         <a href="https://www.instagram.com/medicplusgh/" class="instagram"><i class="bx bxl-instagram"></i></a>
         {{-- <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a> --}}

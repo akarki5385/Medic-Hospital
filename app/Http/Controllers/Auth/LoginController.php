@@ -33,7 +33,7 @@ class LoginController extends Controller
           case 'admin':
             return '/admin_dashboard';
             break;
-          case 'seller':
+          case 'patient':
             return '/patient_dashboard';
             break;
 

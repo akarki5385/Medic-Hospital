@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-
-@include('include.app')
-<body>
-
-  @include('include.topbar')
-
-  @include('include.nav')
+@extends('layouts.main')
+@include('layouts.nav')
+@section('content')
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container">
       <h1>Welcome to Medic+ GH</h1>
       <h2>Talented healthcare professionals making an impact! </h2>
-      <a href="#about" class="btn-get-started scrollto">Get Started</a>
+      {{-- <a href="#about" class="btn-get-started scrollto">Get Started</a> --}}
     </div>
   </section><!-- End Hero -->
 
@@ -470,12 +464,12 @@
                 <h4>Carrie Philips</h4>
                 <span>Chief Medical Officer</span>
                 <p>"We are the leading providers in healthcare"</p>
-                <div class="social">
+                {{-- <div class="social">
                   <a href=""><i class="ri-twitter-fill"></i></a>
                   <a href=""><i class="ri-facebook-fill"></i></a>
                   <a href=""><i class="ri-instagram-fill"></i></a>
                   <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
+                </div> --}}
               </div>
             </div>
           </div>
@@ -487,12 +481,12 @@
                 <h4>Jenna Stern</h4>
                 <span>Chief of Surgery</span>
                 <p>"Over 8,000 successful surgeries and counting"</p>
-                <div class="social">
+                {{-- <div class="social">
                   <a href=""><i class="ri-twitter-fill"></i></a>
                   <a href=""><i class="ri-facebook-fill"></i></a>
                   <a href=""><i class="ri-instagram-fill"></i></a>
                   <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
+                </div> --}}
               </div>
             </div>
           </div>
@@ -504,12 +498,12 @@
                 <h4>William Anderson</h4>
                 <span>Pediatrician</span>
                 <p>"Your tender ones are safe in our care"</p>
-                <div class="social">
+                {{-- <div class="social">
                   <a href=""><i class="ri-twitter-fill"></i></a>
                   <a href=""><i class="ri-facebook-fill"></i></a>
                   <a href=""><i class="ri-instagram-fill"></i></a>
                   <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
+                </div> --}}
               </div>
             </div>
           </div>
@@ -521,12 +515,12 @@
                 <h4>Steven Joseph</h4>
                 <span>Nephrology</span>
                 <p>"Treating hypertension and kidney failure"</p>
-                <div class="social">
+                {{-- <div class="social">
                   <a href=""><i class="ri-twitter-fill"></i></a>
                   <a href=""><i class="ri-facebook-fill"></i></a>
                   <a href=""><i class="ri-instagram-fill"></i></a>
                   <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
+                </div> --}}
               </div>
             </div>
           </div>
@@ -790,7 +784,7 @@
               <div class="email">
                 <i class="icofont-envelope"></i>
                 <h4>Email:</h4>
-                <p>medicgh@govt.lc</p>
+                <p>medicplusgh@gmail.com</p>
               </div>
 
               <div class="phone">
@@ -841,9 +835,7 @@
 
   </main><!-- End #main -->
 
-@include('include.footer')
 
 
-</body>
+@endsection
 
-</html>
