@@ -79,7 +79,7 @@ Route::get('appointment/create/user/appointments', 'Patient\DashboardController@
 Route::post('appointment/store/user/', 'Patient\DashboardController@appointmentstore')->name('userappointment.store');
 
 
-Route::match(['get', 'post'], '/botman', 'BotManController@handle');
+// Route::match(['get', 'post'], '/botman', 'BotManController@handle');
 
 // route for sending email
 Route::get('/send-mail', function(){
@@ -93,3 +93,5 @@ Route::get('/send-mail', function(){
     echo "Confirmation email sent.";
 
     });
+//test route
+Route::resource('products', 'ProductController');

@@ -188,13 +188,16 @@
                                         <div class="col-md-4 form-group">
                                           <select name="department" id="department" class="form-control">
                                             <option value="">Select Department</option>
-                                            <option value="Department 1">Department 1</option>
-                                            <option value="Department 2">Department 2</option>
-                                            <option value="Department 3">Department 3</option>
-                                            <option value="Department 3">Department 3</option>
-                                            <option value="Department 3">Department 3</option>
-                                            <option value="Department 3">Department 3</option>
-                                            <option value="Department 3">Department 3</option>
+                                            <option value="Department 1">Cardiology</option>
+                                            <option value="Department 2">Neurology</option>
+                                            <option value="Department 3">General Medicine</option>
+                                            <option value="Department 3">Pediatrics</option>
+                                            <option value="Department 3">Oncology</option>
+                                            <option value="Department 3">Endocrinology</option>
+                                            <option value="Department 3">Immunology</option>
+                                            <option value="Department 3">Nephrology</option>
+                                            <option value="Department 3">Obstetrics and Gynaecology</option>
+                                            <option value="Department 3">A&E</option>
                                           </select>
                                           <div class="validate"></div>
                                         </div>
