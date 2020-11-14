@@ -20,6 +20,7 @@ class DashboardController extends Controller
         $user = Auth::user();
 
 
+
         return view('patient.dashboard',compact('user'));
       }
     /**
@@ -35,6 +36,21 @@ class DashboardController extends Controller
 
         return view('appointments.create',compact('user'));
     }
+
+
+
+
+    public function updatepicture($id)
+
+    {
+        dd('yo');
+        $user = Auth::user();
+
+
+        return view('appointments.create',compact('user'));
+    }
+
+
 
 
     /**

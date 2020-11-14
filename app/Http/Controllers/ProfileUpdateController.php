@@ -15,7 +15,7 @@ class ProfileUpdateController extends Controller
      */
     public function index()
     {
-        //
+        dd('hi');
     }
 
     /**
@@ -25,7 +25,7 @@ class ProfileUpdateController extends Controller
      */
     public function create()
     {
-        //
+        dd('hi');
     }
 
     /**

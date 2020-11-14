@@ -47,15 +47,23 @@
 
 <div class="section-title">
           <h2>Patient Portal</h2>
-          <p></p>
+          <p>  </p>
         </div>
-
+        <div class="pull-right">
+            <a class="btn btn-success" href="{{ route('profile.update'}}"> Create New Product</a>
+        </div>
         <div class="row">
           <div class="col-lg-3">
               <ul class="nav nav-tabs flex-column">
                   <li class="nav-item">
                       <a class="nav-link active show" data-toggle="tab" href="#tab-1">Profile</a>
                   </li>
+
+                  <li class="nav-item">
+
+
+                </li>
+
                   <li class="nav-item">
 
 
