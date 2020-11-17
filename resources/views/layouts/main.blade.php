@@ -69,6 +69,14 @@ s0.parentNode.insertBefore(s1,s0);
   </script> --}}
 
   {{-- <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script> --}}
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+  <script src="{{ asset('js/app.js') }}" defer></script>
+
+  <link href="{{ asset('css/my.css') }}" rel="stylesheet">
+
+  <script src="{{ asset('js/my.js') }}" defer></script>
+
 
   <script src="{{ asset('assets/vendor/jquery/jquery.min.js') }}" type="text/javascript"></script>
   <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>

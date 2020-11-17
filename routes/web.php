@@ -50,13 +50,22 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('contacts', 'ContactController');
 Route::resource('appointment', 'AppointmentController');
-Route::get('patient_dashboard/profile/update{$id}', 'Patient\DashboardController@profile.update')->name('profile.update');
 
 
 
-Route::post('patient_dashboard/profile/update', 'ProfileUpdateController@index')->name('profile.update');
 
-Route::get('profileedit', 'ProfileUpdateController@edit')->name('profileedit');
+
+// user profile
+Route::get('patient_dashboard/profile/update/$id', 'Patient\DashboardController@updatepicture')->name('profile.update');
+Route::post('profileupdate/store/', 'Patient\DashboardController@profilestore')->name('profileimage.update');
+
+
+
+
+
+
+
+
 
 Route::get('/admin_dashboard', 'Admin\DashboardController@index');
 

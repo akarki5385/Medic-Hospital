@@ -50,7 +50,7 @@
           <p>  </p>
         </div>
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('profile.update'}}"> Create New Product</a>
+            <a class="btn btn-success" href="{{ route('profile.update','$user->id')}}" > Create New Product</a>
         </div>
         <div class="row">
           <div class="col-lg-3">
@@ -104,7 +104,10 @@
                               </p>
                           </div>
                           <div class="col-lg-4 text-center order-1 order-lg-2">
-                              <img src="assets/img/Heart.jpg" alt="" class="img-fluid">
+                            <a class="thumbnail fancybox" rel="ligthbox" href="/public/images/{{ $user->image }}">
+                                <img class="img-responsive" alt="your photo" width="200" height="200" src="/public/images/{{ $user->image }}" />
+
+                            </a>
                           </div>
                       </div>
                   </div>
@@ -162,15 +165,15 @@
                                             <div class="validate"></div>
                                           </div>
 
-                                          <div class="input-group clockpicker">
+                                          {{-- <div class="input-group clockpicker">
                                             <input type="text" class="form-control" value="09:30">
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-time"></span>
                                             </span>
-                                        </div>
-                                        <script type="text/javascript">
+                                        </div> --}}
+                                        {{-- <script type="text/javascript">
                                         $('.clockpicker').clockpicker();
-                                        </script>
+                                        </script> --}}
 
 
 

@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\Patient;
 use App\Appointment;
+use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Redirect;
+use PDF;
+
 
 class DashboardController extends Controller
 {
@@ -40,14 +44,15 @@ class DashboardController extends Controller
 
 
 
-    public function updatepicture($id)
+    public function updatepicture(Request $request)
 
     {
-        dd('yo');
         $user = Auth::user();
 
 
-        return view('appointments.create',compact('user'));
+
+        return view('patient.profile',compact('user'));
+
     }
 
 
@@ -100,6 +105,46 @@ class DashboardController extends Controller
             \Mail::to(Auth::user()->email)->send(new \App\Mail\TestMail($details));
 
         return redirect('/patient_dashboard')->with('success', 'Appointment saved!');
+
+
+    }
+
+
+public function profilestore(Request $request, User $user)
+
+
+    {
+
+        $user = Auth::user()->id;
+
+        $a=User::where('id',$user);
+
+
+        $request->validate([
+
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
+            ]);
+
+            if ($files = $request->file('image')) {
+                $destinationPath = 'public/images/'; // upload path
+                $profileImage = date('YmdHis') . "." . $files->getClientOriginalExtension();
+                $files->move($destinationPath, $profileImage);
+                $update['image'] = "$profileImage";
+                }
+
+
+                User::where('id',$user)->update($update);
+                return view('front')
+                ->with('success','Greate! Product created successfully.');
+
+
+
+        // $email = Auth::user()->email;
+
+
+
+
 
 
     }
