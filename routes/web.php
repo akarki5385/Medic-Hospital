@@ -23,6 +23,19 @@ Route::get('/welcome', function () {
 
 });
 
+// Route::get('/anishtest', function () {
+//     return view('updateprofile');
+
+// });
+Route::get('/anishtest', function () {
+    return view('updateprofile');
+
+});
+
+Route::get('patient_dashboard/profile/', 'Patient\DashboardController@anishxyz')->name('profile.xyz');
+
+
+
 Route::get('/temp', function () {
     return view('template');
 });

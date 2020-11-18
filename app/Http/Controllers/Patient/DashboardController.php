@@ -20,6 +20,7 @@ class DashboardController extends Controller
     public function __construct() {
         $this->middleware('auth');
       }
+
       public function index() {
         $user = Auth::user();
 
@@ -159,6 +160,16 @@ public function profilestore(Request $request, User $user)
     {
         //
     }
+
+
+    public function anishxyz()
+    {
+        $user = Auth::user()->name;
+
+        return view('updateprofile');
+        //
+    }
+
 
     /**
      * Show the form for editing the specified resource.

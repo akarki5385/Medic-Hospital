@@ -52,6 +52,9 @@
         <div class="pull-right">
             <a class="btn btn-success" href="{{ route('profile.update','$user->id')}}" > Create New Product</a>
         </div>
+        <div class="pull-right">
+            <a class="btn btn-success" href= "{{ route('profile.xyz')}}" > Create New Product</a>
+        </div>
         <div class="row">
           <div class="col-lg-3">
               <ul class="nav nav-tabs flex-column">
