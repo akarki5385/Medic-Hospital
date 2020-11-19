@@ -69,7 +69,7 @@ Route::resource('appointment', 'AppointmentController');
 
 
 // user profile
-Route::get('patient_dashboard/profile/update/$id', 'Patient\DashboardController@updatepicture')->name('profile.update');
+Route::get('patient_dashboard/profile/update/', 'Patient\DashboardController@updatepicture')->name('profile.update');
 Route::post('profileupdate/store/', 'Patient\DashboardController@profilestore')->name('profileimage.update');
 
 

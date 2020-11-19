@@ -22,8 +22,20 @@ class DashboardController extends Controller
       }
 
       public function index() {
+
         $user = Auth::user();
 
+       $email = (Auth::user()->email);
+     $allappointment = Appointment::find('email');
+
+
+     if ($allappointment == $email) {
+        dd('truytfdx');
+    }
+    else {
+
+        dd('fffuytfdx');
+    }
 
 
         return view('patient.dashboard',compact('user'));
@@ -136,8 +148,7 @@ public function profilestore(Request $request, User $user)
 
 
                 User::where('id',$user)->update($update);
-                return view('front')
-                ->with('success','Greate! Product created successfully.');
+                return back()->with('success','Greate! You added the profile picture, now staff will recognize you clearly.');
 
 
 
