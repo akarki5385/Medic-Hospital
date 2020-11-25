@@ -6,43 +6,7 @@
   <main id="main">
 
     <!-- ======= Breadcrumbs Section ======= -->
-    <section class="breadcrumbs">
-      <div class="container">
 
-
-
-        <div class="col-sm-12">
-            @if(session()->get('success'))
-              <div class="alert alert-success">
-                {{ session()->get('success') }}
-              </div>
-            @endif
-          </div>
-
-          @if ($errors->any())
-          <div class="alert alert-danger">
-              <strong>Whoops!</strong> There were some problems with your input.<br><br>
-              <ul>
-                  @foreach ($errors->all() as $error)
-                      <li>{{ $error }}</li>
-                  @endforeach
-
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>Inner Page</h2>
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Inner Page</li>
-
-
-
-        </ul>
-    </div>
-@endif
-          </ol>
-        </div>
-
-      </div>
-    </section><!-- End Breadcrumbs Section -->
 
 
 <div class="section-title">
@@ -61,17 +25,20 @@
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#tab-5">Edit your Profile picture</a>
+                    <a class="nav-link" data-toggle="tab" href="#tab-5">Edit your Profile</a>
 
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#tab-6">Edit your Profile information </a>
 
-                  <li class="nav-item">
+                </li>
+             <li class="nav-item">
 
 
                       <a class="nav-link" data-toggle="tab" href="#tab-2">Book Appointment</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#tab-3">Medications</a>
+                      <a class="nav-link" data-toggle="tab" href="#tab-3">Medical Detail</a>
                   </li>
 
                   <li class="nav-item">
@@ -100,9 +67,27 @@
                           <div class="col-lg-8 details order-2 order-lg-1">
                               <h3>Welcome {{ Auth::user()->name }} , this is your personal profile.</h3>
                               <p class="font-italic">Message your health care provider should your information change.</p>
-                              <p>
-                                  Patient registration details goes here.
-                              </p>
+
+
+                              <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+                                <div class="card-header">Personal Details </div>
+                                <div class="card-body">
+                                  <h5 class="card-title">Date of birth: {{ Auth::user()->datebirth }}</h5>
+                                  <p class="card-text"> </p>
+
+                                  <h5 class="card-title">Height:   {{ Auth::user()->height }} </h5>
+                                  <p class="card-text"> </p>
+
+                                  <h5 class="card-title">Weight: {{ Auth::user()->weight }}</h5>
+                                  <p class="card-text"></p>
+
+                                  <h5 class="card-title">Ethnicity: {{ Auth::user()->ethnicity }}</h5>
+                                  <p class="card-text"> </p>
+
+
+                                </div>
+                              </div>
+
                           </div>
                           <div class="col-lg-4 text-center order-1 order-lg-2">
                             <a class="thumbnail fancybox" rel="ligthbox" href="/public/images/{{ $user->image }}">
@@ -138,41 +123,99 @@
                             --}}
 
                             <br>
-    <form method="POST"  action="{{ route('profileimage.update') }}" enctype="multipart/form-data" >
-        @csrf
-    <div class="container">
-        <div class="row">
-        <div class="col-sm-2 imgUp">
-          <div class="imagePreview"></div>
-      <label class="btn btn-primary">Choose a image<input type="file" name="image" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
-        </div><!-- col-2 -->
-        {{-- <i class="fa fa-plus imgAdd"></i> --}}
-       </div><!-- row -->
-      </div><!-- container -->
-      <div class="form-group row mb-0">
-        <div class="col-md-6 offset-md-4">
-            <button type="submit" class="btn btn-primary">
-                {{ __('update') }}
-            </button>
-        </div>
-    </div>
-</form>
-
-                        </div>
-                        <div class="col-lg-4 text-center order-1 order-lg-2">
-                            <img src="assets/img/Heart.jpg" alt="" class="img-fluid">
+                                        <form method="POST"  action="{{ route('profileimage.update') }}" enctype="multipart/form-data" >
+                                            @csrf
+                                        <div class="container">
+                                            <div class="row">
+                                            <div class="col-sm-2 imgUp">
+                                            <div class="imagePreview"></div>
+                                        <label class="btn btn-primary">Choose a image<input type="file" name="image" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
+                                            </div><!-- col-2 -->
+                                            {{-- <i class="fa fa-plus imgAdd"></i> --}}
+                                        </div><!-- row -->
+                                        </div><!-- container -->
+                                        <div class="form-group row mb-0">
+                                            <div class="col-md-6 offset-md-4">
+                                                <button type="submit" class="btn btn-primary">
+                                                    {{ __('update') }}
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form></div>
                         </div>
                     </div>
 
 
-                </div>
-                  <div class="tab-pane" id="tab-2">
+
+        <div class="tab-pane" id="tab-6">
+         <div class="row">
+            <div class="col-lg-8 details order-2 order-lg-1">
+                            <h3>Update Profile information</h3>
+                            {{-- <p class="font-italic">Message your health care provider should your information change.</p>
+                            --}}
+
+                            <br>
+
+<form method="POST"  action="{{ route('profiles.update') }}"  >
+    @csrf
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="sex">Sex</label>
+        <input type="text" name="sex" class="form-control" id="sex" placeholder="sex">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="dob">Date of Birth</label>
+        <input type="date" name="datebirth" class="form-control" id="dob" placeholder="Date of Birth">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="height">Height</label>
+        <input type="number" name="height" class="form-control" id="height" placeholder="Height">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="weight">Weight</label>
+        <input type="number" name="weight" class="form-control" id="weight" placeholder="Weight">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="ethnicity">Ethnicity</label>
+        <input type="text" name="ethnicity" class="form-control" id="ethnicity" placeholder="Ethnicity">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="bloodtype">Blood type</label>
+        <input type="text"  name="blood_type" class="form-control" id="bloodtype" placeholder="blood group">
+      </div>
+
+
+
+    <button type="submit" class="btn btn-primary">Update info</button>
+  </form>
+
+                        </div>
+                    </div>
+        </div>
+
+
+
+
+
+
+              </div>
+
+
+
+
+
+
+                    <div class="tab-pane" id="tab-2">
                       <div class="row">
                           <div class="col-lg-8 details order-2 order-lg-1">
                               <h3>Make Appointments {{ Auth::user()->name }}.</h3>
                               <p class="font-italic">Book an appointment</p>
 
-                              <p>
 
                                 <form action="{{ route('userappointment.store') }}" method="POST">
                                     @csrf
@@ -188,36 +231,6 @@
                                           <div class="validate"></div>
                                         </div>
                                       </div>
-
-
-
-
-                                      <div class="form-row">
-                                          <div class="col-md-4 form-group">
-                                            <input type="text" name="phone_number" class="form-control" id="phone_number" placeholder="Phone Number" >
-                                            <div class="validate"></div>
-                                          </div>
-
-                                          <div class="col-md-4 form-group">
-                                            <input type="time" class="form-control timepicker" name="time" id="input_starttime" placeholder="Time" data-rule="time" data-msg="Please enter a valid time">
-                                            <div class="validate"></div>
-                                          </div>
-
-                                          {{-- <div class="input-group clockpicker">
-                                            <input type="text" class="form-control" value="09:30">
-                                            <span class="input-group-addon">
-                                                <span class="glyphicon glyphicon-time"></span>
-                                            </span>
-                                        </div> --}}
-                                        {{-- <script type="text/javascript">
-                                        $('.clockpicker').clockpicker();
-                                        </script> --}}
-
-
-
-
-
-
                                           <div class="form-row">
                                             <div class="col-md-10 form-group">
                                               <input type="datetime" name="date" class="form-control datepicker" id="date" placeholder="Date" data-rule="minlen:8" data-msg="Please enter at least 4 chars">
@@ -225,10 +238,7 @@
 
                                               </div>
                                             </div>
-                                          {{-- <div class="col-md-4 form-group">
-                                            <input type="tel" class="form-control" name="phone" id="phone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                                            <div class="validate"></div>
-                                          </div> --}}
+
                                         </div>
 
 
@@ -250,10 +260,8 @@
                                           </select>
                                           <div class="validate"></div>
                                         </div>
-                                        {{-- <div class="col-md-4 form-group" name="department">
-                                            <input type="string" name="department" class="form-control" id="department" placeholder="Department" data-rule="minlen:10" data-msg="Please enter at least 10 chars">
-                                        </div> --}}
-                                      </div>
+
+
 
                                       <div class="form-group">
                                         <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
@@ -265,13 +273,25 @@
 
                                     <div class="text-center"><button class="btn btn-success" type="submit">Make an Appointment</button></div>
                                   </form>
-                            </p>
-                          </div>
+
+
                           <div class="col-lg-4 text-center order-1 order-lg-2">
                               <img src="assets/img/Appointment.jpg" alt="" class="img-fluid">
                           </div>
+                          </div>
                       </div>
                   </div>
+
+
+
+
+
+
+
+
+
+
+
                   <div class="tab-pane" id="tab-3">
                       <div class="row">
                           <div class="col-lg-8 details order-2 order-lg-1">
@@ -280,6 +300,15 @@
                               <p>
                                   Medication information goes here.
                               </p>
+                              {{-- card template --}}
+                              <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                                <div class="card-header">Header</div>
+                                <div class="card-body">
+                                  <h5 class="card-title">Success card title</h5>
+                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                              </div>
+{{-- card template --}}
                           </div>
                  </div>
 
@@ -292,4 +321,5 @@
 
 
   </main><!-- End #main -->
-@endsection
+
+  @endsection

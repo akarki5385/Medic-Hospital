@@ -29,13 +29,13 @@ class DashboardController extends Controller
      $allappointment = Appointment::find('email');
 
 
-     if ($allappointment == $email) {
-        dd('truytfdx');
-    }
-    else {
+    //  if ($allappointment == $email) {
+    //     dd('truytfdx');
+    // }
+    // else {
 
-        dd('fffuytfdx');
-    }
+    //     dd('fffuytfdx');
+    // }
 
 
         return view('patient.dashboard',compact('user'));
@@ -67,6 +67,9 @@ class DashboardController extends Controller
         return view('patient.profile',compact('user'));
 
     }
+
+
+
 
 
 
@@ -161,6 +164,52 @@ public function profilestore(Request $request, User $user)
 
     }
 
+
+    public function pupdate(Request $request, User $user)
+
+
+    {
+
+        $id = Auth::user()->id;
+
+
+
+        $request->validate([
+
+
+            'sex' => 'required',
+            'datebirth' => 'required',
+            'height' => 'required',
+            'weight' => 'required',
+            'ethnicity' => 'required',
+            'blood_type' => 'required',
+            ]);
+
+            $contact = User::find($id);
+            $contact->sex =  $request->get('sex');
+            $contact->datebirth = $request->get('datebirth');
+            $contact->height = $request->get('height');
+            $contact->weight = $request->get('weight');
+            $contact->ethnicity = $request->get('ethnicity');
+            $contact->blood_type = $request->get('blood_type');
+            $contact->save();
+
+
+
+                // User::where('id',$user)->update($update);
+                return back()->with('success','Greate! You added the profile picture, now staff will recognize you clearly.');
+
+
+
+        // $email = Auth::user()->email;
+
+
+
+
+
+
+    }
+
     /**
      * Display the specified resource.
      *
@@ -172,6 +221,16 @@ public function profilestore(Request $request, User $user)
         //
     }
 
+
+    public function showuserappointment()
+    {
+        $user = Auth::user()->email;
+
+        $a = Appointment::find($user);
+
+
+        dd($a);
+    }
 
     public function anishxyz()
     {

@@ -1,6 +1,10 @@
 <!doctype html>
 <html>
     <head>
+
+
+
+        hero
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>How to install Botman Chatbot in Laravel? - codechief.org</title>
@@ -9,7 +13,7 @@
     <body>
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="/public/images/{{ $image->image }}" alt="user image">
-           
+
           </div>
     <div class="row">
 

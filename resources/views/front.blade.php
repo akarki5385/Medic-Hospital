@@ -543,7 +543,7 @@
           <ul>
             <li data-aos="fade-up">
               <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" class="collapsed" href="#faq-list-1">Is parking available at Medic+ GH? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-1" class="collapse show" data-parent=".faq-list">
+              <div id="faq-list-1" class="collapse" data-parent=".faq-list">
                   <p>
                       Free parking is available for you and your visitors. Visitors should park in the visitor lot off the Main Entrance to the hospital whenever possible.
                       After 8 p.m., visitors must enter the hospital through the Emergency Department.

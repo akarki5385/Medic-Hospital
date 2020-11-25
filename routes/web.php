@@ -23,14 +23,14 @@ Route::get('/welcome', function () {
 
 });
 
+Route::get('/anishtest', function () {
+    return view('welcome1');
+
+});
 // Route::get('/anishtest', function () {
 //     return view('updateprofile');
 
 // });
-Route::get('/anishtest', function () {
-    return view('updateprofile');
-
-});
 
 Route::get('patient_dashboard/profile/', 'Patient\DashboardController@anishxyz')->name('profile.xyz');
 
@@ -76,6 +76,12 @@ Route::post('profileupdate/store/', 'Patient\DashboardController@profilestore')-
 
 
 
+Route::post('pupdate/store/', 'Patient\DashboardController@pupdate')->name('profiles.update');
+
+
+
+
+
 
 
 
@@ -86,6 +92,9 @@ Route::get('/admin_dashboard', 'Admin\DashboardController@index');
 
 Route::get('/doctor_dashboard', 'Doctor\DashboardController@index');
 Route::get('/patient_dashboard', 'Patient\DashboardController@index');
+
+
+Route::get('/patient_dashboard/userappointment', 'Patient\DashboardController@showuserappointment');
 
 // Route::get('/appointment/create', 'AppointmentController@create');
 // Route::resource('appointments', 'AppointmentController');
