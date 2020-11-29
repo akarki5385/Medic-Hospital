@@ -94,7 +94,13 @@ Route::get('/doctor_dashboard', 'Doctor\DashboardController@index');
 Route::get('/patient_dashboard', 'Patient\DashboardController@index');
 
 
-Route::get('/patient_dashboard/userappointment', 'Patient\DashboardController@showuserappointment');
+// Route::get('/patient_dashboard/userappointment', 'Patient\DashboardController@showuserappointment');
+
+
+
+
+Route::get('/patient_dashboard/userappointment/{id}', 'Patient\DashboardController@showuserappointment')->name('my.appointment');
+
 
 // Route::get('/appointment/create', 'AppointmentController@create');
 // Route::resource('appointments', 'AppointmentController');

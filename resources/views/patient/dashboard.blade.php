@@ -17,6 +17,16 @@
             <a class="btn btn-success" href="{{ route('profile.update','$user->id')}}" > Upload the profile picture</a>
         </div> --}}
 
+{{--
+
+        <div class="pull-right">
+            <a class="btn btn-success" href="{{ route('my.appointment',Auth::user()->id)}}" > View your medical detail</a>
+        </div> --}}
+
+
+
+
+
         <div class="row">
           <div class="col-lg-3">
               <ul class="nav nav-tabs flex-column">
@@ -231,32 +241,44 @@
                                           <div class="validate"></div>
                                         </div>
                                       </div>
+
+
+
                                           <div class="form-row">
-                                            <div class="col-md-10 form-group">
+                                            <div class="col-md-4 form-group">
+                                                <input type="number" class="form-control" name="phone_number" id="phone_number" placeholder="Contact Number"  data-msg="Please enter the phone number">
+                                                <div class="validate"></div>
+                                              </div>
+
+                                            <div class="col-md-4 form-group">
                                               <input type="datetime" name="date" class="form-control datepicker" id="date" placeholder="Date" data-rule="minlen:8" data-msg="Please enter at least 4 chars">
                                               <div class="validate">
 
                                               </div>
                                             </div>
 
-                                        </div>
+                                        <div class="col-md-4 form-group">
+                                            <input type="time" class="form-control" name="time" id="time" placeholder="Appointment Time"  data-msg="Please enter the time">
+                                            <div class="validate"></div>
+                                          </div>
 
+                                        </div>
 
 
 
                                         <div class="col-md-4 form-group">
                                           <select name="department" id="department" class="form-control">
                                             <option value="">Select Department</option>
-                                            <option value="Department 1">Cardiology</option>
-                                            <option value="Department 2">Neurology</option>
-                                            <option value="Department 3">General Medicine</option>
-                                            <option value="Department 3">Pediatrics</option>
-                                            <option value="Department 3">Oncology</option>
-                                            <option value="Department 3">Endocrinology</option>
-                                            <option value="Department 3">Immunology</option>
-                                            <option value="Department 3">Nephrology</option>
-                                            <option value="Department 3">Obstetrics and Gynaecology</option>
-                                            <option value="Department 3">A&E</option>
+                                            <option value="Cardiology">Cardiology</option>
+                                            <option value="Neurology">Neurology</option>
+                                            <option value="General Medicine">General Medicine</option>
+                                            <option value="Pediatrics">Pediatrics</option>
+                                            <option value="Oncology">Oncology</option>
+                                            <option value="Endocrinology">Endocrinology</option>
+                                            <option value="Immunology">Immunology</option>
+                                            <option value="Nephrology">Nephrology</option>
+                                            <option value="Obstetrics and Gynaecology">Obstetrics and Gynaecology</option>
+                                            <option value="A&E">A&E</option>
                                           </select>
                                           <div class="validate"></div>
                                         </div>
@@ -301,13 +323,30 @@
                                   Medication information goes here.
                               </p>
                               {{-- card template --}}
-                              <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-                                <div class="card-header">Header</div>
-                                <div class="card-body">
-                                  <h5 class="card-title">Success card title</h5>
-                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                              </div>
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Department</th>
+        <th scope="col">Date</th>
+        <th scope="col">Time</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+        @foreach ($appointment as $user)
+      <tr>
+        <td>{{ $user->department}}</td>
+        <td>{{ $user->date }}</td>
+
+        <td>{{ $user->time }}</td>
+
+
+      </tr>
+      @endforeach
+    </tbody>
+  </table>
 {{-- card template --}}
                           </div>
                  </div>

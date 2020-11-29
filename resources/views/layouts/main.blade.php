@@ -36,6 +36,25 @@
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
+
+    {{-- <style>
+        .container1 {
+          position: relative;
+        }
+
+        .bottomleft1 {
+          position: absolute;
+          bottom: 8px;
+          left: 16px;
+          font-size: 18px;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+          opacity: 0.3;
+        }
+        </style> --}}
   </head>
   <body>
     @include('layouts.topbar')
@@ -69,11 +88,14 @@ s0.parentNode.insertBefore(s1,s0);
   </script> --}}
 
   {{-- <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script> --}}
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
+
+
+  <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
 
   <script src="{{ asset('js/app.js') }}" defer></script>
 
-  <link href="{{ asset('css/my.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/my.css') }}" rel="stylesheet" type="text/css">
 
   <script src="{{ asset('js/my.js') }}" defer></script>
 
@@ -90,6 +112,14 @@ s0.parentNode.insertBefore(s1,s0);
 
   <!-- Template Main JS File -->
   <script src="{{ asset('assets/js/main.js') }}" type="text/javascript"></script>
+
+
+
+
+
+    <a href="#" class="back-to-top"><i class="bx bx-up-arrow-alt" ></i></a>
+
+
 
 </body>
 

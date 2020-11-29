@@ -70,22 +70,10 @@ class RegisterController extends Controller
     {
 
 
-
-        // if ($files = $data->file('image')) {
-        //     $destinationPath = 'public/image/profile'; // upload path
-        //     $profileImage = date('YmdHis') . "." . $files->getClientOriginalExtension();
-        //     $files->move($destinationPath, $profileImage);
-        //     $insert['image'] = "$profileImage";
-        //     }
-
-
-
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            // 'role' => $data['role'],
-            // 'image' => $data['image'],
+            'password' => Hash::make($data['password'])
 
         ]);
     }

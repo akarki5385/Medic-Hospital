@@ -14,5 +14,14 @@ class Appointment extends Model
         'date',
         'time',
         'message',
+        'user_id',
+
     ];
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
+
+
 }

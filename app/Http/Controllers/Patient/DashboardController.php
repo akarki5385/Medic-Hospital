@@ -26,19 +26,12 @@ class DashboardController extends Controller
         $user = Auth::user();
 
        $email = (Auth::user()->email);
-     $allappointment = Appointment::find('email');
+       $id = (Auth::user()->id);
+    //  $allappointment = Appointment::find('email');
 
+     $appointment = Appointment::where('user_id', $id)->get();
 
-    //  if ($allappointment == $email) {
-    //     dd('truytfdx');
-    // }
-    // else {
-
-    //     dd('fffuytfdx');
-    // }
-
-
-        return view('patient.dashboard',compact('user'));
+        return view('patient.dashboard',compact('user','appointment'));
       }
     /**
      * Show the form for creating a new resource.
@@ -84,10 +77,8 @@ class DashboardController extends Controller
 
 
     {
-        // $user = Auth::user()->name;
+        //  $user = Auth::user()->id;
         // $email = Auth::user()->email;
-
-
 
         $request->validate([
 
@@ -103,6 +94,7 @@ class DashboardController extends Controller
         $appointment = new Appointment([
             'name' => (Auth::user()->name),
             'email' =>(Auth::user()->email),
+            'user_id'=>(Auth::user()->id),
             'department' => $request->get('department'),
             'phone_number' => $request->get('phone_number'),
             'date' => $request->get('date'),
@@ -222,14 +214,21 @@ public function profilestore(Request $request, User $user)
     }
 
 
-    public function showuserappointment()
+    public function showuserappointment($id)
     {
-        $user = Auth::user()->email;
 
-        $a = Appointment::find($user);
+//         $appointment = Appointment::where('user_id', $id)->get();
+// // dd($appointment);
+// //         $appointment = Appointment::findorFail($id);
 
 
-        dd($a);
+
+//         // dd($date,$time);
+
+
+//         return view('showuserappointment',compact('appointment'));
+
+
     }
 
     public function anishxyz()

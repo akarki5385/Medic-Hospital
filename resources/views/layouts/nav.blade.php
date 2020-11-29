@@ -13,8 +13,8 @@
           <li><a href="#doctors">Doctors</a></li>
           <li class="drop-down"><a href="">More</a>
            <ul>
-                  <li><a href="#">FAQs</a></li>
-                  <li><a href="#">Gallery</a></li>
+                  <li><a href="#faq">FAQs</a></li>
+                  <li><a href="#gallery">Gallery</a></li>
 
                 </ul>
                  </li>

@@ -22,6 +22,10 @@ class CreateAppointmentsTable extends Migration
             $table->string('date');
             $table->string('time');
             $table->string('message');
+            $table->foreignId('user_id')->constrained();
+
+
+
             $table->timestamps();
         });
     }
