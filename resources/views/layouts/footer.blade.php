@@ -16,46 +16,29 @@
             </p>
           </div>
 
-          <div class="col-lg-2 col-md-6 footer-links">
+          <div class="col-lg-4 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              {{-- <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li> --}}
             </ul>
           </div>
 
-          <div class="col-lg-2 col-md-6 footer-links">
-            {{-- <h4>Useful Links</h4> --}}
-            <ul>
-              {{-- <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li> --}}
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
 
-          {{-- <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
+           <div class="col-lg-3 col-md-6 footer-links">
+           {{-- <h4>Our Services</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Cardiovascular Health</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Pharmacy</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">COVID-19 Testing</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Emergency</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Weight Loss Management</a></li>
-            </ul>
-          </div> --}}
+            </ul>--}}
+          </div>
 
-          {{-- <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join Our Newsletter</h4>
-            <p>Sign up to receive COVID-19 health alerts</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div> --}}
 
         </div>
       </div>

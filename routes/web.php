@@ -111,6 +111,7 @@ Route::post('/admin/appointment/store', 'AppointmentController@store')->name('ap
 
 
 
+Route::get('appointment/viewdetails', 'Patient\DashboardController@medicalDetail')->name('history');
 
 //for user appointment
 

@@ -14,14 +14,27 @@
           <p>  </p>
         </div>
         {{-- <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('profile.update','$user->id')}}" > Upload the profile picture</a>
+            <a class="btn btn-success" href="{{ route('history','$user->id')}}" > Upload the profile picture</a>
         </div> --}}
 
-{{--
 
-        <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('my.appointment',Auth::user()->id)}}" > View your medical detail</a>
-        </div> --}}
+
+
+        @if(Session::has('success'))
+        <div class="alert alert-info">
+            {{Session::get('success')}}
+        </div>
+          @endif
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <strong>Error!</strong>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
 
 
@@ -42,17 +55,23 @@
                     <a class="nav-link" data-toggle="tab" href="#tab-6">Edit your Profile information </a>
 
                 </li>
+
              <li class="nav-item">
 
 
                       <a class="nav-link" data-toggle="tab" href="#tab-2">Book Appointment</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#tab-3">Medical Detail</a>
+                      <a class="nav-link" data-toggle="tab" href="#tab-3">Appointment Detail</a>
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#tab-4">Good to know...</a>
+                    <a class="nav-link " data-toggle="tab" href="#tab-7">Medical Detail</a>
+                </li>
+
+
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#tab-4">Plan your Visit</a>
                 </li>
                   <li class="nav-item">
 
@@ -111,8 +130,24 @@
                   <div class="tab-pane" id="tab-4">
                     <div class="row">
                         <div class="col-lg-8 details order-2 order-lg-1">
-                            <h3>good to know</h3>
-                            <p class="font-italic">Message your health care provider should your information change.</p>
+                            <h1>Preparing for your Visit</h1>
+                            <p class="font-italic">Get the most out of your time with your provider.</p>
+                            <h2>What to bring to your visit</h2>
+                            <ul>
+                                <li>Your photo ID</li>
+                                <li>Your current medical insurance card(s)</li>
+                                <li>Payment, if you’re not paying with insurance</li>
+                                <li>A list of any countries to which you traveled in the last year, including dates</li>
+                              </ul>
+
+                              <h2>What you can do before your visit</h2>
+                              <ul>
+                                  <li>Write down a list of concerns that you wish to discuss with your provider.</li>
+                                  <li>Be open and honest when you fill out information forms about your health. Don’t hide anything about your alcohol, drug or tobacco use, your sexual history or other lifestyle issues. Even if these issues are sensitive to you, it is important to trust your health care provider. Your provider can only give you proper, effective care if you give complete and accurate information.</li>
+                                  <li>Invite a family member or another person to go with you to your appointment. Sometimes, having someone with you can help you remember what your provider tells you.</li>
+                                  <li>Bring a paper and pen (or a mobile device such as a tablet) with you to your visit. You’ll want to write down and remember important instructions from your provider.</li>
+                                </ul>
+
                             <p>
                                 looking for content to upload regarding health concern
                             </p>
@@ -151,11 +186,56 @@
                                                 </button>
                                             </div>
                                         </div>
-                                    </form></div>
+                                    </form>
+                                </div>
                         </div>
                     </div>
 
+                    <div class="tab-pane" id="tab-7">
+                        <h3>Medical Detail</h3>
 
+                        <div class="container">
+                            <div class="card-columns d-flex justify-content-center">
+
+
+                                <div class="card text-white bg-info mb-9" style="max-width: 30rem;">
+                                  <div class="card-header">Treatment Details </div>
+                                  <div class="card-body">
+                                      @foreach ($patienttreatment as $pat)
+
+
+                                    <h5 class="card-title">Treatment Description: {{ $pat->treat_description }}</h5>
+                                    <p class="card-text"> </p>
+
+                                    <h5 class="card-title"> Treatment Duration: {{ $pat->treat_duration }}     </h5>
+                                    <p class="card-text"> </p>
+                                    @endforeach
+                                  </div>
+                                </div>
+
+
+
+
+
+                            <div class="card text-white bg-info mb-9" style="max-width: 30rem;">
+                                <div class="card-header">Diagnosis </div>
+                                <div class="card-body">
+                                    @foreach ($patientdiagnosis as $pat)
+
+
+                                  <h5 class="card-title">Description: {{ $pat->description }}</h5>
+                                  <p class="card-text"> </p>
+
+                                  <h5 class="card-title"> Start year: {{ $pat->start_yr }}     </h5>
+                                  <p class="card-text"> </p>
+                                  <h5 class="card-title"> Stop year: {{ $pat->stop_yr}}     </h5>
+                                  <p class="card-text"> </p>
+                                  @endforeach
+                                </div>
+                              </div>
+                        </div>
+                        </div>
+                    </div>
 
         <div class="tab-pane" id="tab-6">
          <div class="row">
@@ -286,7 +366,7 @@
 
 
                                       <div class="form-group">
-                                        <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
+                                        <textarea class="form-control" name="message" rows="5" placeholder="Message "></textarea>
                                         <div class="validate"></div>
                                       </div>
 
@@ -317,12 +397,10 @@
                   <div class="tab-pane" id="tab-3">
                       <div class="row">
                           <div class="col-lg-8 details order-2 order-lg-1">
-                              <h3>Current Medication Information.</h3>
-                              <p class="font-italic">Stay up to date on your medications</p>
-                              <p>
-                                  Medication information goes here.
+                              <h3>Appointment Detail</h3>
+                                                            Following is the medical appointment:
                               </p>
-                              {{-- card template --}}
+
 
 <table class="table">
     <thead class="thead-dark">
@@ -347,7 +425,7 @@
       @endforeach
     </tbody>
   </table>
-{{-- card template --}}
+
                           </div>
                  </div>
 

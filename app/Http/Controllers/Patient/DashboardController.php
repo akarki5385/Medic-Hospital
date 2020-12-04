@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Patient;
 use App\Appointment;
+use App\Treatment;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 use Redirect;
 use PDF;
 
@@ -17,9 +20,9 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct() {
-        $this->middleware('auth');
-      }
+    // public function __construct() {
+    //     $this->middleware('auth');
+    //   }
 
       public function index() {
 
@@ -28,10 +31,16 @@ class DashboardController extends Controller
        $email = (Auth::user()->email);
        $id = (Auth::user()->id);
     //  $allappointment = Appointment::find('email');
+    $patienttreatment= DB::table('patient_treatment')->where('user_id',  $id)->get();
 
+
+
+    $patientdiagnosis= DB::table('diagnosis')->where('patient_id',  $id)->get();
+
+// dd($patientdiagnosis);
      $appointment = Appointment::where('user_id', $id)->get();
-
-        return view('patient.dashboard',compact('user','appointment'));
+//
+        return view('patient.dashboard',compact('user','appointment','patienttreatment','patientdiagnosis'));
       }
     /**
      * Show the form for creating a new resource.
@@ -63,6 +72,20 @@ class DashboardController extends Controller
 
 
 
+    public function medicalDetail(Request $request)
+
+    {
+dd('hi');
+
+       $id = (Auth::user()->id);
+    //  $allappointment = Appointment::find('email');
+
+     $medicalDetail = Treatment::where('user_id', $id)->get();
+     $a= DB::table('patient_treatment')->where('user_id', '=', 'id')->get();
+
+dd($a);
+        return view('patient.dashboard',compact('user','appointment','a'));
+      }
 
 
 
